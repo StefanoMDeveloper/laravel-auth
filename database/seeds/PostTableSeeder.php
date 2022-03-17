@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
-use App\Post;
+use Illuminate\Support\Str;
+use App\Post; 
 
 class PostsTableSeeder extends Seeder
 {
@@ -13,12 +14,14 @@ class PostsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 10; $i++) { 
-            $newPost = new Post();
-            $newPost->title = $faker->words(4,true);
-            $newPost->content = $faker->words(10,true);
-            $newPost->slug = Str::slug($newPost->title,'-');
-            $newPost->save();
+        for($i = 0; $i < 10; $i++)
+        {
+            $post = new Post();
+            $post->title = $faker->words(4,true); //inserisce n parole di tipo stringa
+            $post->content = $faker->text();
+            $post->slug = Str::of($post->title)->slug("-"); // sostituisce gli spazi con i '-'
+
+            $post->save();
         }
     }
 }
