@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
     <h1>Crea post</h1>
 
     <form action="{{ route('admin.posts.store') }}" method="POST">
@@ -10,7 +10,7 @@
 
         <div class="form-group">
             <label for="title">Titolo</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il nome del post">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il titolo del post">
         </div>
         <div class="form-group">
             <label for="content">Descrizione</label>
@@ -29,4 +29,5 @@
             </ul>
         </div>
     @endif
+</div>
 @endsection

@@ -17,9 +17,9 @@ class PostsTableSeeder extends Seeder
         for($i = 0; $i < 10; $i++)
         {
             $post = new Post();
-            $post->title = $faker->words(4,true); //inserisce n parole di tipo stringa
+            $post->title = $faker->words(4,true);
             $post->content = $faker->text();
-            $post->slug = Str::of($post->title)->slug("-"); // sostituisce gli spazi con i '-'
+            $post->slug = Str::of($post->title)->slug("-"); 
 
             $post->save();
         }

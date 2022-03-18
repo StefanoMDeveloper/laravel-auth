@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <a href="{{ route('admin.posts.create') }}"><button type="button" class="btn btn-success">aggiungi</button></a>
 
     <table class="table">
@@ -35,4 +36,5 @@
 
         </tbody>
     </table>
+</div>
 @endsection
